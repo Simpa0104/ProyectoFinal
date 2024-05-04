@@ -1,0 +1,54 @@
+<div class="row justify-content-end">
+    <div class="col-lg-1 col-12">
+        <button class="btn btn-success" (click)="NuevoProducto()" data-bs-toggle="modal"
+            data-bs-target="#modalProducto">
+            Nuevo
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Fecha Registro</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let prod of vectorProductos">
+                        <th scope="row">{{prod.id}}</th>
+                        <td>{{prod.nombre}}</td>
+                        <td>{{prod.fechaRegistro | date:'dd/MM/yyyy HH:m'}}</td>
+                        <td>
+                            <button class="btn btn-warning margin me-1" data-bs-toggle="modal"
+                                data-bs-target="#modalProducto" (click)="EditarProducto(prod)">Editar</button>
+                            <button class="btn btn-danger" (click)="EliminarProducto(prod)">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalProducto" #modalProducto data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="modalProducto" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalProducto">{{isNew?'Nuevo':'Editar'}} Producto
+                        {{this.productoSeleccion?.nombre}}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <app-cu-producto [producto]="productoSeleccion"></app-cu-producto>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" (click)="GuardarProducto()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
