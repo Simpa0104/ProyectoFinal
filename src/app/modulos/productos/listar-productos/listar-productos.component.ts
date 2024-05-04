@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Producto } from '../../models/producto';
+import { Producto } from '../../../models/producto';
 import { Modal } from 'bootstrap';
 import Swal from 'sweetalert2';
 

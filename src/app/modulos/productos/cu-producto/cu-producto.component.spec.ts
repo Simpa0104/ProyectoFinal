@@ -10,8 +10,8 @@ describe('CuProductoComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [CuProductoComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(CuProductoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

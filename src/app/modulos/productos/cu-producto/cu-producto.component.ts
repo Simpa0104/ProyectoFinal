@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Producto } from '../../models/producto';
+import { Producto } from '../../../models/producto';
 import { format } from 'date-fns-tz';
 
 @Component({
@@ -14,7 +14,7 @@ export class CuProductoComponent {
     let formateada = format(fecha, "yyyy-MM-dd'T'HH:mm", { timeZone: "America/Bogota" });
     return formateada;
   }
-  
+
   updateDate(valor: string) {
     this.producto!.fechaRegistro = new Date(valor);
   }

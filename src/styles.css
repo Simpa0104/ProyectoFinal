@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+.swal-popup {
+    background-color: #008000;
+    /* Color verde */
+}
+
+.swal-icon--success {
+    fill: #0000FF;
+    /* Color azul */
+}
+
+.swal-button--confirm {
+    background-color: #000000;
+    /* Color azul */
+}
