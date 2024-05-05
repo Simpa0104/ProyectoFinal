@@ -5,8 +5,8 @@
             placeholder="Ingrese el nombre" [(ngModel)]="proveedor.nombre">
     </div>
     <div class="mb-3">
-        <label for="fechaRegistro" class="form-label">Fecha Registro</label>
-        <input class="form-control" id="fechaRegistro" type="datetime-local" *ngIf="proveedor" name="fechaRegistro"
-            [ngModel]="formatDateTimeLocal(proveedor.fechaRegistro)" (ngModelChange)="updateDate($event)">
+        <label for="fechaVisita" class="form-label">Fecha de Visita</label>
+        <input class="form-control" id="fechaVisita" type="datetime-local" *ngIf="proveedor" name="fechaVisita"
+            [ngModel]="formatDateTimeLocal(proveedor.fechaVisita)" (ngModelChange)="updateDate($event)">
     </div>
 </form>

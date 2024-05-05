@@ -5,8 +5,23 @@
             placeholder="Ingrese el nombre" [(ngModel)]="producto.nombre">
     </div>
     <div class="mb-3">
+        <label for="Precio" class="form-label">Precio</label>
+        <input type="text" *ngIf="producto" class="form-control" id="Precio" name="Precio"
+            placeholder="Ingrese el Precio" [(ngModel)]="producto.precio">
+    </div>
+    <div class="mb-3">
         <label for="fechaRegistro" class="form-label">Fecha Registro</label>
         <input class="form-control" id="fechaRegistro" type="datetime-local" *ngIf="producto" name="fechaRegistro"
             [ngModel]="formatDateTimeLocal(producto.fechaRegistro)" (ngModelChange)="updateDate($event)">
+    </div>
+    <div class="mb-3">
+        <label for="Stock" class="form-label">Stock</label>
+        <input type="text" *ngIf="producto" class="form-control" id="Stock" name="Stock"
+            placeholder="Ingrese el Stock" [(ngModel)]="producto.stock">
+    </div>
+    <div class="mb-3">
+        <label for="Proveedor" class="form-label">Proveedor</label>
+        <input type="text" *ngIf="producto" class="form-control" id="Proveedor" name="Proveedor"
+            placeholder="Ingrese el Proveedor" [(ngModel)]="producto.Proveedor">
     </div>
 </form>

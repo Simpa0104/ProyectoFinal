@@ -13,8 +13,8 @@ export class ProveedoresComponent {
   @ViewChild('modalProveedor') modal: ElementRef | undefined;
 
   vectorProveedores: Proveedor[] = [
-    { id: 1, nombre: "Coca-Cola", fechaRegistro: new Date() },
-    { id: 2, nombre: "Nestle", fechaRegistro: new Date() }
+    { id: 1, nombre: "Coca-Cola", fechaVisita: new Date() },
+    { id: 2, nombre: "Nestle", fechaVisita: new Date() }
   ];
 
   proveedorSeleccion: Proveedor | undefined = undefined;
@@ -27,7 +27,7 @@ export class ProveedoresComponent {
 
   NuevoProveedor() {
     this.isNew = true;
-    this.proveedorSeleccion = { id: 0, fechaRegistro: new Date(), nombre: "" };
+    this.proveedorSeleccion = { id: 0, fechaVisita: new Date(), nombre: "" };
   }
 
   GuardarProveedor() {

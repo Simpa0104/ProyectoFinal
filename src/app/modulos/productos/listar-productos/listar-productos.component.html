@@ -13,7 +13,10 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Producto</th>
+                        <th scope="col">Precio</th>
                         <th scope="col">Fecha Registro</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Proveedor</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -21,7 +24,10 @@
                     <tr *ngFor="let prod of vectorProductos">
                         <th scope="row">{{prod.id}}</th>
                         <td>{{prod.nombre}}</td>
+                        <td>{{prod.precio}}</td>
                         <td>{{prod.fechaRegistro | date:'dd/MM/yyyy HH:m'}}</td>
+                        <td>{{prod.stock}}</td>
+                        <td>{{prod.Proveedor}}</td>
                         <td>
                             <button class="btn btn-warning margin me-1" data-bs-toggle="modal"
                                 data-bs-target="#modalProducto" (click)="EditarProducto(prod)">Editar</button>

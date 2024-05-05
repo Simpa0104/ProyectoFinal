@@ -13,7 +13,7 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Proveedor</th>
-                        <th scope="col">Fecha Registro</th>
+                        <th scope="col">Fecha de Visita</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -21,7 +21,7 @@
                     <tr *ngFor="let prov of vectorProveedores">
                         <th scope="row">{{prov.id}}</th>
                         <td>{{prov.nombre}}</td>
-                        <td>{{prov.fechaRegistro | date:'dd/MM/yyyy HH:m'}}</td>
+                        <td>{{prov.fechaVisita | date:'dd/MM/yyyy HH:m'}}</td>
                         <td>
                             <button class="btn btn-warning margin me-3" data-bs-toggle="modal"
                                 data-bs-target="#modalProveedor" (click)="EditarProveedor(prov)">Editar</button>

@@ -16,7 +16,7 @@ export class CuProveedoresComponent {
   }
 
   updateDate(valor: string) {
-    this.proveedor!.fechaRegistro = new Date(valor);
+    this.proveedor!.fechaVisita = new Date(valor);
   }
 }
 

@@ -13,8 +13,8 @@ export class ListarProductosComponent {
   @ViewChild('modalProducto') modal: ElementRef | undefined;
 
   vectorProductos: Producto[] = [
-    { id: 1, nombre: "Coca-Cola", fechaRegistro: new Date() },
-    { id: 2, nombre: "Pasteles de arequipe", fechaRegistro: new Date() }
+    {id: 1, nombre: "Coca Cola 1.5", precio: 0, fechaRegistro: new Date(), stock: 0, Proveedor: "CocaCola"},
+    {id: 2, nombre: "Pasteles de arequipe", precio: 0, fechaRegistro: new Date(), stock: 0, Proveedor: "PandaPan"}
   ];
 
   productoSeleccion: Producto | undefined = undefined;
@@ -27,7 +27,7 @@ export class ListarProductosComponent {
 
   NuevoProducto() {
     this.isNew = true;
-    this.productoSeleccion = { id: 0, fechaRegistro: new Date(), nombre: "" };
+    this.productoSeleccion = { id: 0, nombre: "", precio: 0, fechaRegistro: new Date(), stock: 0, Proveedor: ""};
   }
 
 
