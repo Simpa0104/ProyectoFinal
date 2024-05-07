@@ -1,0 +1,224 @@
+/* CSS Table comienzo */
+
+table {
+    width: 1150px;
+    font-family: sans-serif;
+    font-weight: 100;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px #0000001a;
+}
+
+th,
+td {
+    background-color: #ffffff33;
+    padding: 15px;
+    color: #000000;
+}
+
+th {
+    text-align: left;
+}
+
+thead th {
+    background-color: #ffffff33;
+    box-shadow: 20 20 20px #0000001a;
+}
+
+tbody tr:hover {
+    background-color: #ffd969;
+}
+
+tbody td {
+    position: relative;
+}
+
+tbody td:hover:before {
+    content: "";
+    position: absolute;
+    background-color: #ffd969;
+    left: 0;
+    right: 0;
+    top: -999px;
+    bottom: -999px;
+    z-index: -2;
+}
+
+/* CSS Table final */
+
+/* CSS Button comienzo */
+.button {
+    --color: #21d611;
+    color: black;
+    padding: 0.5em 1.0em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.button::before,
+.button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.button::before {
+    top: -1em;
+    left: -1em;
+}
+
+.button::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.button:hover::before,
+.button:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.button:hover {
+    color: #000000;
+}
+
+.button:active {
+    filter: brightness(.8);
+}
+
+/* CSS Button final */
+
+/* CSS Button Eliminar comienzo */
+.buttonE {
+    --color: #fd0000;
+    color: black;
+    padding: 0.5em 1.0em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.buttonE::before,
+.buttonE::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.buttonE::before {
+    top: -1em;
+    left: -1em;
+}
+
+.buttonE::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.buttonE:hover::before,
+.buttonE:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.buttonE:hover {
+    color: #000000;
+}
+
+.buttonE:active {
+    filter: brightness(.8);
+}
+
+/* CSS Button Eliminar final */
+
+/* CSS Button Editar comienzo */
+.buttonEd {
+    --color: #fda900;
+    color: black;
+    padding: 0.5em 1.0em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.buttonEd::before,
+.buttonEd::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+}
+
+.buttonEd::before {
+    top: -1em;
+    left: -1em;
+}
+
+.buttonEd::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
+.buttonEd:hover::before,
+.buttonEd:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
+.buttonEd:hover {
+    color: #000000;
+}
+
+.buttonEd:active {
+    filter: brightness(.8);
+}
+
+/* CSS Button Editar final */

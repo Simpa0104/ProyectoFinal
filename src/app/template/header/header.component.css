@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&display=swap');
+
+
+.color {
+    color: black !important;
+}
+
 .collapse {
     justify-content: center;
 }
@@ -48,5 +55,5 @@ ul {
 }
 
 .logo:hover {
-    opacity: 0.5;
+    color: black;
 }
