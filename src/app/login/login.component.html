@@ -1,20 +1,32 @@
-<div class="login-container">
-  <div class="logo mx-auto">
-    <i class="fa-brands fa-pied-piper-alt"></i>
-  </div>
-  <h2>Inicio de sesión</h2>
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/styles.css">
 
-    <div class="form-group">
-      <label for="username">Nombre de usuario:</label>
-      <input type="text" id="username" name="username" placeholder="Ingresa tu usuario">
-    </div>
-    <div class="form-group">
-      <label for="password">Contraseña:</label>
-      <div class="password-container">
-        <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña">
-        <i class="fas fa-eye password-toggle" (click)="togglePasswordVisibility()"></i>
-      </div>
-    </div>
-    <button (click)="LoginFake()">Ingresar</button>
-  
-</div>
+<div class="section">
+        <div class="section pb-5 pt-5 pt-sm-2 text-center">
+          <div class="card-3d-wrap mx-auto">
+            <div class="card-3d-wrapper">
+              <div class="card-front">
+                <div class="center-wrap">
+                  <div class="section text-center">
+                    <div class="logo mx-auto">
+                      <i class="fa-brands fa-pied-piper-alt"></i>
+                    </div>
+                    <h4 class="pb-3">Inicio de sesión</h4>
+                    <div class="form-group">
+                      <input type="email" class="form-style" placeholder="Email">
+                      <i class="input-icon uil uil-at"></i>
+                    </div>
+                    <div class="form-group mt-2">
+                      <input type="password" class="form-style" placeholder="Password">
+                      <i class="input-icon uil uil-lock-alt"></i>
+                    </div>
+                    <a (click)="LoginFake()" class="btn mt-4">Login</a>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
