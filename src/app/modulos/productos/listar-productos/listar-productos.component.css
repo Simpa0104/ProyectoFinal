@@ -33,17 +33,6 @@ tbody td {
     position: relative;
 }
 
-tbody td:hover:before {
-    content: "";
-    position: absolute;
-    background-color: #ffd969;
-    left: 0;
-    right: 0;
-    top: -999px;
-    bottom: -999px;
-    z-index: -2;
-}
-
 /* CSS Table final */
 
 /* CSS Button comienzo */

@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Producto } from '../../../models/producto';
 import { Modal } from 'bootstrap';
 import Swal from 'sweetalert2';
+import { ProductoService } from '../../../services/producto/producto.service'; // Asegúrate de importar correctamente el servicio
 
 
 @Component({
@@ -13,39 +14,62 @@ export class ListarProductosComponent {
   @ViewChild('modalProducto') modal: ElementRef | undefined;
 
   vectorProductos: Producto[] = [
-    {id: 1, nombre: "Coca Cola 1.5", precio: 0, fechaRegistro: new Date(), stock: 0, Proveedor: "CocaCola"},
-    {id: 2, nombre: "Pasteles de arequipe", precio: 0, fechaRegistro: new Date(), stock: 0, Proveedor: "PandaPan"}
+    { id: 1, nombre: "Coca Cola 1.5", precio: 6000, stock: 200, Proveedor: "CocaCola", seleccionado: false},
+    { id: 2, nombre: "Pasteles de arequipe", precio: 1800, stock: 40, Proveedor: "PandaPan", seleccionado: false },
+    { id: 3, nombre: "Golosia", precio: 2200, stock: 50, Proveedor: "Mama Inés", seleccionado: false },
+    { id: 4, nombre: "Quesito 500g", precio: 9500, stock: 15, Proveedor: "Colanta", seleccionado: false },
+    { id: 5, nombre: "Bolsa de leche 900 ml", precio: 4000, stock: 15, Proveedor: "Colanta", seleccionado: false }
   ];
 
   productoSeleccion: Producto | undefined = undefined;
   isNew: boolean = false;
 
+  constructor(private productoService: ProductoService) { }
+
   EditarProducto(producto: Producto) {
     this.isNew = false;
     this.productoSeleccion = producto;
+    // Abre el modal
+    let bsModal = new Modal(this.modal?.nativeElement);
+    bsModal.show();
   }
 
   NuevoProducto() {
     this.isNew = true;
-    this.productoSeleccion = { id: 0, nombre: "", precio: 0, fechaRegistro: new Date(), stock: 0, Proveedor: ""};
+    let maxId = Math.max(...this.vectorProductos.map(prod => prod.id));
+    this.productoSeleccion = { id: maxId + 1, nombre: "", precio: 0, stock: 0, Proveedor: "", seleccionado: false };
   }
-
 
   GuardarProducto() {
     if (this.isNew) {
-      this.vectorProductos.push(this.productoSeleccion!); //Equivalenta a llamar API para guardar  -en la base de datos por POST
-      this.productoSeleccion = undefined;
-      this.cerrarModal(this.modal)
+      // Guarda el nuevo producto
+      this.vectorProductos.push(this.productoSeleccion!);
     } else {
-      //Llamada a la API para actualizar por PUT
-      this.productoSeleccion = undefined;
-      this.cerrarModal(this.modal)
+      // Actualiza el producto existente
+      const index = this.vectorProductos.findIndex(prod => prod.id === this.productoSeleccion!.id);
+      if (index !== -1) {
+        this.vectorProductos[index] = this.productoSeleccion!;
+      }
     }
+    // Limpia la selección y cierra el modal
+    this.productoSeleccion = undefined;
+    this.cerrarModal(this.modal);
+    // Guarda los productos en el almacenamiento local
+    localStorage.setItem('productos', JSON.stringify(this.vectorProductos));
     Swal.fire({
       title: 'Cambios guardados correctamente',
       icon: 'success'
     })
   }
+
+  // Llama a este método en el constructor para cargar los productos del almacenamiento local
+  cargarProductos() {
+    const productosGuardados = localStorage.getItem('productos');
+    if (productosGuardados) {
+      this.vectorProductos = JSON.parse(productosGuardados);
+    }
+  }
+
 
 
   EliminarProducto(prod: Producto) {
@@ -70,6 +94,10 @@ export class ListarProductosComponent {
       .then(rs => {
         if (rs.isConfirmed) {
           //Llamada API Delete
+          const index = this.vectorProductos.indexOf(prod);
+          if (index > -1) {
+            this.vectorProductos.splice(index, 1);
+          }
 
           Swal.fire({
             title: 'Producto eliminado correctamente',
@@ -78,6 +106,7 @@ export class ListarProductosComponent {
         }
       });
   }
+
 
   cerrarModal(modal: ElementRef | undefined) {
     if (modal) {

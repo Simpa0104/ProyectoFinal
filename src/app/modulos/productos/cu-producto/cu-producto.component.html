@@ -10,11 +10,6 @@
             placeholder="Ingrese el Precio" [(ngModel)]="producto.precio">
     </div>
     <div class="mb-3">
-        <label for="fechaRegistro" class="form-label">Fecha Registro</label>
-        <input class="form-control" id="fechaRegistro" type="datetime-local" *ngIf="producto" name="fechaRegistro"
-            [ngModel]="formatDateTimeLocal(producto.fechaRegistro)" (ngModelChange)="updateDate($event)">
-    </div>
-    <div class="mb-3">
         <label for="Stock" class="form-label">Stock</label>
         <input type="text" *ngIf="producto" class="form-control" id="Stock" name="Stock"
             placeholder="Ingrese el Stock" [(ngModel)]="producto.stock">

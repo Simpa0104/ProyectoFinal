@@ -1,1 +1,23 @@
-<p>nueva-venta works!</p>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Total:{{ total }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of productos">
+            <label class="container">
+                <input checked="checked" type="checkbox" [(ngModel)]="prod.seleccionado" (change)="calcularTotal()">
+                <div class="checkmark"></div>
+            </label>
+            <td>{{ prod.nombre }}</td>
+            <td>{{ prod.precio }}</td>
+            <td>{{ prod.stock }}</td>
+        </tr>
+    </tbody>
+</table>

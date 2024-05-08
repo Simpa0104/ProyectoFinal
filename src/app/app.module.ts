@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
