@@ -1,6 +1,10 @@
 .hidden {
     display: none;
 }
+.hiddenIndex {
+    display: none;
+}
+
 
 h4 {
     font-weight: 600;
